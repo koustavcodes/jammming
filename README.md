@@ -1,65 +1,72 @@
-# Jammming - A React Web Application
+# Spotify Playlist Creator
 
-## Project Overview
-Jammming is a React-based web application that allows users to search for songs using the Spotify API, create custom playlists, and save them to their personal Spotify accounts. This project demonstrates the use of React components, state management, API requests, and user authentication.
+A React web application that allows users to search for songs using the Spotify API and create custom playlists that can be saved directly to their Spotify account.
 
-## Technologies Used
-- **React**: Frontend library for building the user interface.
-- **JavaScript (ES6+)**: Core programming language for the application.
-- **HTML & CSS**: Markup and styling.
-- **Spotify API**: For searching songs and managing playlists.
-- **Fetch API**: For handling HTTP requests.
-- **Git & GitHub**: Version control and repository hosting.
-- **Deployment Platform**: (To be decided, e.g., Vercel, Netlify, or GitHub Pages)
+![App Screenshot](./src/assets/image-app.png)
+
 
 ## Features
-- **Search Functionality**: Users can search for songs by song title, and optionally by artist or genre.
-- **Song Information Display**: Displays the title, artist, and album for each searched song.
-- **Playlist Creation**: Users can create a custom playlist by adding or removing songs.
-- **Spotify Integration**: Allows users to log in and save their custom playlists to their Spotify account.
 
-## Future Work
-- Improve UI/UX with better styling and animations.
-- Add functionality to search by additional attributes (e.g., genre, album, popularity, etc.).
-- Implement additional authentication features.
-- Enhance error handling for API requests.
-- Optimize performance for faster API responses.
+- **Spotify Authentication**: Secure user authentication through Spotify's OAuth flow
+- **Song Search**: Search Spotify's vast library by song title
+- **Song Details**: Display comprehensive track information including:
+  - Song title
+  - Artist name
+  - Album name
+  - Album artwork
+- **Playlist Management**:
+  - Add/remove tracks with a simple click
+  - Custom playlist naming
+  - Save playlists directly to your Spotify account
 
-## Prerequisites
-To work on this project, you should be familiar with the following technologies:
-- **HTML & CSS**
-- **JavaScript (ES6+)**
-- **React (Components, Hooks, State Management)**
-- **HTTP Requests & Responses**
-- **User Authentication**
+## Technologies Used
 
-## Installation & Setup
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-username/jammming.git
-   ```
-2. Navigate to the project folder:
-   ```sh
-   cd jammming
-   ```
-3. Install dependencies:
-   ```sh
-   npm install
-   ```
-4. Start the development server:
-   ```sh
-   npm start
-   ```
-5. Open your browser and visit `http://localhost:3000` to use the app.
+- **React**: Built using functional components and hooks
+- **CSS Modules**: Modular styling approach for component-specific styles
+- **Spotify Web API**: Integration for music data and playlist management
+- **GitHub**: Version control and project hosting
 
-## Deployment
-To deploy the app, follow these steps:
-1. Build the project:
-   ```sh
-   npm run build
-   ```
-2. Deploy using your preferred platform (e.g., Netlify, Vercel, GitHub Pages).
+## What I Learned
 
----
+Throughout this project, I gained experience with:
 
-Happy coding! 💻
+- Building a multi-component React application
+- Managing application state using React hooks (useState, useEffect)
+- Implementing OAuth authentication flow
+- Working with REST APIs and handling asynchronous operations
+- Using CSS Modules for styled components
+- Props management and component communication
+- Version control with Git and GitHub
+
+## Areas for Improvement
+
+1. **API Implementation**:
+   - Currently relies heavily on example code and Copilot
+   - Need to better understand OAuth flows and API documentation
+   - Goal: Implement API integrations from scratch in future projects
+
+2. **Testing**:
+   - Currently lacks test coverage
+   - Need to implement:
+     - Unit tests for components
+     - Integration tests for API calls
+     - End-to-end testing
+
+## Future Enhancements
+
+- [ ] Create shareable playlist links
+- [ ] Add loading animations
+- [ ] Implement comprehensive testing suite
+- [ ] Mobile Compatibility
+
+## 📱 Usage
+
+1. Log in with your Spotify account
+![Usage Flow](./src/assets/image-login.png)
+2. Search for songs using the search bar
+![Usage Flow](./src/assets/image-search.png)
+3. Click on songs to add them to your playlist
+![Usage Flow](./src/assets/image-select.png)
+4. Name your playlist
+![Usage Flow](./src/assets/image-playlist.png)
+6. Click "Save to Spotify" to save your playlist
