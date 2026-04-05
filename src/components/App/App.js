@@ -14,19 +14,34 @@ function App() {
     const [playlistName, setPlaylistName] = useState("New Playlist");
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [accessToken, setAccessToken] = useState("");
 
-    // Get access token on component mount
+    // Trigger auth flow once on initial load
     useEffect(() => {
-        setAccessToken(Spotify.getAccessToken());
-    }, [accessToken]);
+        let isMounted = true;
+
+        const initAuth = async () => {
+            try {
+                await Spotify.getAccessToken();
+            } catch (error) {
+                if(isMounted) {
+                    setError(`Authentication failed: ${error.message}`);
+                }
+            }
+        };
+
+        initAuth();
+
+        return () => {
+            isMounted = false;
+        };
+    }, []);
 
     // Handle search for tracks
     const handleSearch = async (term) => {
         setIsLoading(true);
         setError(null);
         try {
-            const results = await Spotify.search(term, accessToken);
+            const results = await Spotify.search(term);
             setSearchResults(results);
         } catch (error) {
             setError(`Search failed: ${error.message}`);
